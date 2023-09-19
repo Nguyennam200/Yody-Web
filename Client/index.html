@@ -32,9 +32,9 @@
     </div>
     <div class="box_full_screen">
         <div class="header">
-            <!-- <div class="topbar">
+            <div class="topbar">
                 <img src="../images/images_display/bannertop.png"  id="123" alt="">
-            </div> -->
+            </div>
             <div class="header-container">
                 <div class="topbar-top">
                     <div class="topbar-top-left">
@@ -186,7 +186,7 @@
                         </div>
                         <div class="topbar-bottom-right">
                             <div class="cart-wap">
-                                <img src="	https://bizweb.dktcdn.net/100/438/408/themes/913235/assets/icon-cart-header.svg?1688974095403" alt="">Giỏ hàng
+                                <img src="	https://bizweb.dktcdn.net/100/438/408/themes/913235/assets/icon-cart-header.svg?1688974095403" alt="">Giỏ hàng</img>
                                 <ul class="modelbox_cart_list">
                                     <li>
                                         <img src="https://bizweb.dktcdn.net/100/438/408/themes/904142/assets/blank_cart.svg?1688095839453" alt="" class="header_cart_list-img">
@@ -221,13 +221,11 @@
                             <img src="../images/images_display/slider_5.webp" alt="" />
                         </div>
                     </div>
-                    <!--INDICATORS-->
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-example" data-slide-to="1"></li>
                         <li data-target="#carousel-example" data-slide-to="2"></li>
                     </ol>
-                    <!--PREVIUS-NEXT BUTTONS-->
                     <a class="left carousel_control fa fa-angle-left" href="#carousel-example" data-slide="prev"></a>
                     <a class="right carousel_control fa fa-angle-right" href="#carousel-example" data-slide="next"></a>
                 </div>
@@ -408,83 +406,6 @@
                     <button type="button" class="arrow-left fa fa-angle-left" name="open_cate3"></button>
                     <button type="button" class="arrow-right fa fa-angle-right" name="open_cate3"></button>
                 </div>
-                <script>
-                    $(document).ready(function () {
-                        var toScroll = 0, width_list_max = 0, width_max_show = 0;
-                        var id_box = "";
-                        $('.item-teamproduct-show').hide();
-                        const btn_tittle = document.querySelectorAll('.tittle-list-item-show');
-                        btn_tittle.forEach(function(button){
-                            button.addEventListener("click", function(e){
-                                btn_tittle.forEach(function(button){
-                                    var id_button = button.id;
-                                    $('#'+id_button).removeClass('show-tittle');
-                                });
-                                $('.item-teamproduct-show').hide();
-                                var id_button_click = button.id;
-                                id_box = button.id;
-                                $('#'+id_button_click).addClass('show-tittle');
-                                $('.'+id_button_click).show();
-                                toScroll = 0;
-                                width_max_show = $('.'+id_box).width();
-                                width_list_max = $('.'+id_box+' .box-show-item').width();
-                                width_list_max = $('.'+id_button_click+' .arrow-left').prop('disabled', true);
-                                if(width_list_max<width_max_show){
-                                    width_list_max = $('.'+id_button_click+' .arrow-right').prop('disabled', true);
-                                }
-                            });
-                        });
-                        $('#open_cate1').click();
-                        
-                        function up_box(id_box, id_button){
-                            width_max_show = $(id_box).width();
-                            width_list_max = $(id_box+' .box-show-item').width();
-                            $(id_box+' .arrow-left').prop('disabled', false);
-                            if (width_list_max - toScroll - width_max_show > width_max_show) {
-                                toScroll += width_max_show;
-                            } else {
-                                toScroll += width_list_max - width_max_show;
-                                $(id_button).prop('disabled', true);
-                            }
-                            $(id_box).scrollLeft(toScroll);
-                            console.log(toScroll);
-                        }
-                        function back_box(id_box, id_button){
-                            width_max_show = $(id_box).width();
-                            width_list_max = $(id_box+' .box-show-item').width();
-                            $(id_box+' .arrow-right').prop('disabled', false);
-                            if (toScroll - width_max_show > 0) {
-                                toScroll -= width_max_show;
-                            } else {
-                                toScroll = 0;
-                                $(id_button).prop('disabled', true);
-                            }
-                            $(id_box).scrollLeft(toScroll);
-                            console.log(toScroll);
-                        }
-                        $('.open_cate1 .arrow-right').click(function (e) {
-                            up_box('.open_cate1',this);
-                        });
-
-                        $(".open_cate1 .arrow-left").click(function (e) {
-                            back_box('.open_cate1',this);
-                        });
-                        $('.open_cate2 .arrow-right').click(function (e) {
-                            up_box('.open_cate2',this);
-                        });
-
-                        $(".open_cate2 .arrow-left").click(function (e) {
-                            back_box('.open_cate2',this);
-                        });
-                        $('.open_cate3 .arrow-right').click(function (e) {
-                            up_box('.open_cate3',this);
-                        });
-
-                        $(".open_cate3 .arrow-left").click(function (e) {
-                            back_box('.open_cate3',this);
-                        });
-                    });
-                </script>
             </div>
 
             <div class="wrapper-inner">
@@ -517,9 +438,10 @@
                 </div>
                 <div class="footer-info-col-2">
                     <div class="title-item width-1">
-                        <div class="title-footer">
-                            Về YODY
-                            <ul>
+                        <div class="box-list-tap">
+                            <input type="checkbox" checked/>
+                            <div data-toggle="box-list-tap" class="title-footer">Về YODY</div>
+                            <ul class="box-list-tap-menu">
                                 <li><a href="">Giới thiệu</a></li>
                                 <li><a href="">Liên hệ</a></li>
                                 <li><a href="">Tuyển dụng</a></li>
@@ -530,9 +452,10 @@
                         </div>
                     </div>
                     <div class="title-item width-2">
-                        <div class="title-footer">
-                            HỖ TRỢ KHÁCH HÀNG
-                            <ul>
+                        <div class="box-list-tap">
+                            <input type="checkbox" checked />
+                            <a data-toggle="box-list-tap" class="title-footer">HỖ TRỢ KHÁCH HÀNG</a>
+                            <ul class="box-list-tap-menu">
                                 <li><a href="">Hướng dẫn Chọn size</a></li>
                                 <li><a href="">Chính sách Khách hàng thân thiết</a></li>
                                 <li><a href="">Chính sách Bảo hành, đổi/trả</a></li>
@@ -543,23 +466,26 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="title-item width-3 modal-content">
-                        <div class="title-footer">
-                            CÔNG TY CP THỜI TRANG YODY
-                            <ul>
-                                <li><span class="fa fa-map-marker"></span>Công ty cổ phần Thời trang YODY</li>
+                    <div class="title-item width-3">
+                        <div class="box-list-tap">
+                            <input type="checkbox" checked/>
+                            <a data-toggle="box-list-tap" class="title-footer">CÔNG TY CP THỜI TRANG YODY</a>
+                            <ul class="box-list-tap-menu">
+                                <li><img src="images/map.svg">Công ty cổ phần Thời trang YODY</li>
                                 <li>Mã số thuế: 0801206940</li>
                                 <li>Địa chỉ: Đường An Định - Phường Việt Hòa - Thành phố Hải Dương - Hải Dương</li>
-                                <li><span class="fa fa-map-marker"></span>Tìm cửa hàng gần bạn nhất</li>
-                                <li><span class="fa fa-phone"></span><a href="tel: 02499986999">Liên hệ đặt hàng: 024 999 86 999.</a></li>
+                                <li><img src="images/icon_address.webp">Tìm cửa hàng gần bạn nhất</li>
+                                <li><img src="images/phone.svg" alt=""><a href="tel: 02499986999">Liên hệ đặt hàng: 024 999 86 999.</a></li>
                                 <li><a href="tel: 02499986999">Thắc mắc đơn hàng: 024 999 86 999.</a></li>
                                 <li><a href="tel: 18002086">Góp ý khiếu nại: 1800 2086.</a></li>
-                                <li><span class="fa fa-envelope"></span>Email: chamsockhachhang@yody.vn</a></li>
-                                <li class="image-row">
-                                <a href=""><img src="https://bizweb.dktcdn.net/100/438/408/themes/913235/assets/logo_bct.png?1688974095403" alt=""></a>
-                                <a href="" class="iamge-footer"><img src="./image/img/_dmca_premi_badge_5.png" alt="" style="margin-bottom: 10px;"></a></li>
+                                <li><img src="images/email.svg"><a href="">Email: chamsockhachhang@yody.vn</a></li>
                             </ul>
                         </div>
+                        
+                        <li class="logo-fix">
+                            <img src="images/logo_bct.webp" alt="" class="left">
+                            <img src="./images/_dmca_premi_badge_5.png" alt="" style="left: 160px;">
+                        </li>
                     </div>
                 </div>
             </div>
@@ -567,12 +493,86 @@
             <div class="banquyen">© YODY - Bản quyền thuộc về Công ty cổ phần thời trang YODY</div>
         </div>
     </div>
-
     <!-- Bootstrap JS -->
     <script src="../Bootstrap/js/bootstrap.js"></script>
     <script src="../Bootstrap/js/custom.js"></script>
 
     <script>
+        $(document).ready(function () {
+            var toScroll = 0, width_list_max = 0, width_max_show = 0;
+            var id_box = "";
+            $('.item-teamproduct-show').hide();
+            const btn_tittle = document.querySelectorAll('.tittle-list-item-show');
+            btn_tittle.forEach(function(button){
+                button.addEventListener("click", function(e){
+                    btn_tittle.forEach(function(button){
+                        var id_button = button.id;
+                        $('#'+id_button).removeClass('show-tittle');
+                    });
+                    $('.item-teamproduct-show').hide();
+                    var id_button_click = button.id;
+                    id_box = button.id;
+                    $('#'+id_button_click).addClass('show-tittle');
+                    $('.'+id_button_click).show();
+                    toScroll = 0;
+                    width_max_show = $('.'+id_box).width();
+                    width_list_max = $('.'+id_box+' .box-show-item').width();
+                    width_list_max = $('.'+id_button_click+' .arrow-left').prop('disabled', true);
+                    if(width_list_max<width_max_show){
+                        width_list_max = $('.'+id_button_click+' .arrow-right').prop('disabled', true);
+                    }
+                });
+            });
+            $('#open_cate1').click();
+            
+            function up_box(id_box, id_button){
+                width_max_show = $(id_box).width();
+                width_list_max = $(id_box+' .box-show-item').width();
+                $(id_box+' .arrow-left').prop('disabled', false);
+                if (width_list_max - toScroll - width_max_show > width_max_show) {
+                    toScroll += width_max_show;
+                } else {
+                    toScroll += width_list_max - width_max_show;
+                    $(id_button).prop('disabled', true);
+                }
+                $(id_box).scrollLeft(toScroll);
+                console.log(toScroll);
+            }
+            function back_box(id_box, id_button){
+                width_max_show = $(id_box).width();
+                width_list_max = $(id_box+' .box-show-item').width();
+                $(id_box+' .arrow-right').prop('disabled', false);
+                if (toScroll - width_max_show > 0) {
+                    toScroll -= width_max_show;
+                } else {
+                    toScroll = 0;
+                    $(id_button).prop('disabled', true);
+                }
+                $(id_box).scrollLeft(toScroll);
+                console.log(toScroll);
+            }
+            $('.open_cate1 .arrow-right').click(function (e) {
+                up_box('.open_cate1',this);
+            });
+
+            $(".open_cate1 .arrow-left").click(function (e) {
+                back_box('.open_cate1',this);
+            });
+            $('.open_cate2 .arrow-right').click(function (e) {
+                up_box('.open_cate2',this);
+            });
+
+            $(".open_cate2 .arrow-left").click(function (e) {
+                back_box('.open_cate2',this);
+            });
+            $('.open_cate3 .arrow-right').click(function (e) {
+                up_box('.open_cate3',this);
+            });
+
+            $(".open_cate3 .arrow-left").click(function (e) {
+                back_box('.open_cate3',this);
+            });
+        });
         // zoom ảnh full inner
         $('#zoom_img_all').hide();
         const image_link = document.querySelectorAll("img");
