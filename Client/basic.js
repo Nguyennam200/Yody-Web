@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+
+    // xử lí list danh mục sản phẩm
     var toScroll = 0, width_list_max = 0, width_max_show = 0;
     var id_box = "";
     $('.item-teamproduct-show').hide();
@@ -89,6 +91,22 @@ $(document).ready(function () {
                 $('#zoom_img_all img').attr('src', img_src);
             },1000);
         });
+    });
+
+    // hiện thị button
+    $('.button-top').hide();
+    $(window).scroll(function () { 
+        var top_scroll = $(window).scrollTop();
+        if(top_scroll > 400){
+            $('.button-top').show();
+        }else{
+            $('.button-top').hide();
+        }
+    });
+
+    // back-top web
+    $('.button-top').click(function (e) { 
+        $(window).scrollTop(0);
     });
 
     // đóng hộp zoom ảnh

@@ -64,6 +64,8 @@
         z-index: 50;
         border-radius: 50%;
         font-size: 20px;
+        background-color: unset;
+        border: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -99,8 +101,19 @@
         right: 30px;
         background:  #CB2027;
         animation: lantoa2 3s linear infinite;
-    }.button-call img{
+    }
+    .button-call img{
         animation: laclu 1s linear infinite;
+    }
+    .button-top{
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        bottom: 40px;
+        right: 30px;
+    }
+    .button-top img{
+        border-radius: 0;
     }
     
     @keyframes lantoa2{
@@ -114,7 +127,11 @@
     }
     @keyframes laclu{
         0%{ transform: rotate(0deg); }
-        50%{ transform: rotate(45deg); }
+        10%{ transform: rotate(-25deg); }
+        20%{ transform: rotate(25deg); }
+        30%{ transform: rotate(-25deg); }
+        40%{ transform: rotate(25deg); }
+        50%{ transform: rotate(0deg); }
         100%{ transform: rotate(0deg); }
     }
 
@@ -189,6 +206,7 @@
 
         .box_full_screen .header .topbar{
             width: 100%;
+            max-width: 1370px;
             height: auto;
             display: flex;
             justify-content: center;
@@ -197,11 +215,13 @@
         .box_full_screen .header .topbar img{
             width: 150%;
             height: 100%;
+            margin: auto;
         }
 
         .header-container{
             background: url(../images/images_display/background-header.webp) center no-repeat;
             width: 100%;
+            max-width: 1370px;
             height: auto;
             font-size: 8px;
             padding: 10px 50px;
